@@ -283,7 +283,7 @@ RUN git clone https://github.com/lionelgo/magma-patches.git && \
     # Moved git clone https://github.com/facebook/folly.git /folly && \
     cd /folly && \
     git checkout -f efe2962d54734d9e899f592dfaa68055e7752858 && \
-    patch -p1 < /magma-patches/patches/folly-gflagslib-fix.patch && \
+    patch -p1 < /magma-patches/fedora/folly-gflagslib-fix.patch && \
     mkdir _build && \
     cd _build && \
     # cmake "-DFPHSA_NAME_MISMATCHED=true" .. && \
@@ -299,7 +299,7 @@ RUN git clone https://github.com/lionelgo/magma-patches.git && \
     git pull origin master && \
     git log -n1 && \
     echo "Patching dict_S6as6d" && \
-    patch -p1 < /magma-patches/patches/0001-opencoord.org.freeDiameter.patch && \
+    patch -p1 < /magma-patches/fedora/0001-opencoord.org.freeDiameter.patch && \
     mkdir build && \
     cd build && \
     cmake3 ../ && \
@@ -330,14 +330,14 @@ RUN git clone https://github.com/lionelgo/magma-patches.git && \
     ##### lib czmq
     cd /libzmq && \
     # Moved git clone --branch=v4.2.3 https://github.com/zeromq/libzmq.git && \
-    patch -p1 < /magma-patches/patches/libzmq-strncpy.patch && \
+    patch -p1 < /magma-patches/fedora/libzmq-strncpy.patch && \
     ./autogen.sh && \
     ./configure && \
     make -j`nproc` && \
     make install && \
     git clone --branch=v4.1.0 https://github.com/zeromq/czmq.git && \
     cd czmq && \
-    patch -p1 < /magma-patches/patches/czmq-strncat.patch && \
+    patch -p1 < /magma-patches/fedora/czmq-strncat.patch && \
     ./autogen.sh && \
     ./configure && \
     make -j`nproc` && \
