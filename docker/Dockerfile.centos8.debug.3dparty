@@ -86,6 +86,7 @@ RUN yum install -y \
     patch \
     libidn-devel \
     libgcrypt-devel \
+    redis \
     # Install libgtpnl requirements
     libmnl-devel \
     # Install Nettle requirements
